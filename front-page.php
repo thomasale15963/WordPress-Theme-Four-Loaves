@@ -10,22 +10,16 @@ get_header()
     <section class="landing-page-left-section">
         <div class="landing-page-left-section-content-container">
 
+
             <h1 class="landing-page-left-section-headline">
                 Four Loaves
             </h1>
-
-            <h1>
-                <?php
-                echo wp_get_attachment_url(( get_theme_mod( "landing-page-header-image-setting" ) ));
-                ?>
-            </h1>
-
 
             <p class="landing-page-left-section-slogan">
 
                 <!-- get the setting value and check if empty -->
                 <?php 
-                 $site_slogan = get_theme_mod("landing-page-slogan-setting");
+                 $site_slogan = get_theme_mod("landing-page-slogan-content-setting");
 
                  if($site_slogan != ""){
                      echo $site_slogan;
@@ -39,14 +33,24 @@ get_header()
             <?php
            
            if(get_theme_mod("landing-page-cta-display-setting") ==='Yes'){?>
-            <button class="landing-page-left-section-button">
-                Make A Reservation
-            </button>
+            <a class="landing-page-left-section-button"
+                href="<?php echo get_theme_mod( "landing-page-cta-link-setting")?>">
+                <?php
+                $cta_button_content = get_theme_mod("landing-page-cta-content-setting" );
+
+                if($cta_button_content != ""){
+                    echo $cta_button_content;
+                }else{
+                    echo "Make A Reservation";
+                }
+                ?>
+            </a>
             <?php } ?>
 
         </div>
     </section>
-    <section class="landing-page-right-section"></section>
+    <img class="landing-page-right-section"
+        src="<?php echo wp_get_attachment_url( get_theme_mod("landing-page-header-image-setting") )?>">
 </div>
 <!-- Landing Page End -->
 

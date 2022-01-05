@@ -40,12 +40,19 @@ new FourLoavesCustomize();
 
 
 // Css Customizer
-
 function fl_customize_css(){ ?>
 
 <style>
 h1 {
     color: <?php echo get_theme_mod("landing-page-title-color-setting") ?>;
+    font-family: <?php echo get_theme_mod("landing-page-title-font-type-setting")?>;
+}
+
+.landing-page-left-section-headline {
+    font-family: <?php echo get_theme_mod("landing-page-title-font-type-setting")?>;
+    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
+    letter-spacing: <?php echo get_theme_mod("landing-page-title-font-spacing-setting") ?>;
+
 }
 </style>
 
