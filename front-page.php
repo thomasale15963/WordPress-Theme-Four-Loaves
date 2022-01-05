@@ -33,8 +33,7 @@ get_header()
             <?php
            
            if(get_theme_mod("landing-page-cta-display-setting") ==='Yes'){?>
-            <a class="landing-page-left-section-button"
-                href="<?php echo get_theme_mod( "landing-page-cta-link-setting")?>">
+            <button class="landing-page-left-section-button">
                 <?php
                 $cta_button_content = get_theme_mod("landing-page-cta-content-setting" );
 
@@ -44,8 +43,8 @@ get_header()
                     echo "Make A Reservation";
                 }
                 ?>
-            </a>
-            <?php } ?>
+                </a>
+                <?php } ?>
 
         </div>
     </section>
